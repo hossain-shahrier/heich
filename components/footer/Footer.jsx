@@ -140,8 +140,8 @@ const Footer = () => {
                         y2="43.432"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop offset="0" stop-color="#0d61a9"></stop>
-                        <stop offset="1" stop-color="#16528c"></stop>
+                        <stop offset="0" stopColor="#0d61a9"></stop>
+                        <stop offset="1" stopColor="#16528c"></stop>
                       </linearGradient>
                       <path
                         fill="url(#awSgIinfw5_FS5MLHI~A9a)"
@@ -179,13 +179,13 @@ const Footer = () => {
                         r="44.899"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop offset="0" stop-color="#fd5"></stop>
-                        <stop offset=".328" stop-color="#ff543f"></stop>
-                        <stop offset=".348" stop-color="#fc5245"></stop>
-                        <stop offset=".504" stop-color="#e64771"></stop>
-                        <stop offset=".643" stop-color="#d53e91"></stop>
-                        <stop offset=".761" stop-color="#cc39a4"></stop>
-                        <stop offset=".841" stop-color="#c837ab"></stop>
+                        <stop offset="0" stopColor="#fd5"></stop>
+                        <stop offset=".328" stopColor="#ff543f"></stop>
+                        <stop offset=".348" stopColor="#fc5245"></stop>
+                        <stop offset=".504" stopColor="#e64771"></stop>
+                        <stop offset=".643" stopColor="#d53e91"></stop>
+                        <stop offset=".761" stopColor="#cc39a4"></stop>
+                        <stop offset=".841" stopColor="#c837ab"></stop>
                       </radialGradient>
                       <path
                         fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
@@ -199,11 +199,11 @@ const Footer = () => {
                         gradientTransform="matrix(1 0 0 .6663 0 1.849)"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop offset="0" stop-color="#4168c9"></stop>
+                        <stop offset="0" stopColor="#4168c9"></stop>
                         <stop
                           offset=".999"
-                          stop-color="#4168c9"
-                          stop-opacity="0"
+                          stopColor="#4168c9"
+                          stopOpacity="0"
                         ></stop>
                       </radialGradient>
                       <path
@@ -240,9 +240,9 @@ const Footer = () => {
                         y2="41.301"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop offset="0" stop-color="#f44f5a"></stop>
-                        <stop offset=".443" stop-color="#ee3d4a"></stop>
-                        <stop offset="1" stop-color="#e52030"></stop>
+                        <stop offset="0" stopColor="#f44f5a"></stop>
+                        <stop offset=".443" stopColor="#ee3d4a"></stop>
+                        <stop offset="1" stopColor="#e52030"></stop>
                       </linearGradient>
                       <path
                         fill="url(#PgB_UHa29h0TpFV_moJI9a)"
@@ -281,8 +281,8 @@ const Footer = () => {
                         y2="45.444"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop offset="0" stop-color="#33bef0"></stop>
-                        <stop offset="1" stop-color="#0a85d9"></stop>
+                        <stop offset="0" stopColor="#33bef0"></stop>
+                        <stop offset="1" stopColor="#0a85d9"></stop>
                       </linearGradient>
                       <path
                         fill="url(#3gvvizWQ9RZhriH82V06da)"
@@ -294,9 +294,9 @@ const Footer = () => {
                       ></path>
                       <path
                         fill="#fff"
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M15.046,26.75l7.601-8.362c0.192-0.211,0.522-0.219,0.724-0.017 l4.374,4.374c0.152,0.152,0.385,0.19,0.577,0.094l7.256-3.628c0.496-0.248,0.967,0.376,0.592,0.785l-8.784,9.582 c-0.205,0.223-0.559,0.215-0.753-0.018l-4.369-5.243c-0.154-0.185-0.417-0.234-0.627-0.117l-5.979,3.322 C15.164,27.798,14.665,27.168,15.046,26.75z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       ></path>
                       <path
                         d="M23.017,17.724c0.267,0,0.518,0.104,0.707,0.293l4.12,4.12c0.152,0.152,0.385,0.19,0.577,0.094 l6.933-3.467c0.145-0.073,0.298-0.109,0.453-0.109c0.392,0,0.751,0.238,0.913,0.607c0.16,0.364,0.091,0.775-0.182,1.072 l-8.784,9.582c-0.189,0.206-0.458,0.324-0.737,0.324c-0.298,0-0.578-0.131-0.768-0.36l-4.104-4.925 c-0.154-0.185-0.417-0.234-0.627-0.117l-5.618,3.121c-0.156,0.086-0.321,0.13-0.491,0.13c-0.392,0-0.751-0.238-0.914-0.607 c-0.16-0.362-0.092-0.773,0.179-1.07l7.601-8.362C22.466,17.844,22.736,17.724,23.017,17.724 M23.017,17.224 c-0.422,0-0.826,0.179-1.11,0.491l-7.601,8.362c-0.406,0.446-0.508,1.063-0.266,1.609c0.243,0.549,0.781,0.904,1.371,0.904 c0.256,0,0.503-0.065,0.734-0.193l5.256-2.92c0.21-0.117,0.473-0.068,0.627,0.117l3.839,4.606c0.286,0.343,0.706,0.54,1.152,0.54 c0.419,0,0.822-0.177,1.106-0.486l8.784-9.582c0.408-0.446,0.512-1.063,0.271-1.611c-0.242-0.55-0.78-0.906-1.371-0.906 c-0.234,0-0.462,0.055-0.677,0.162l-6.611,3.306c-0.192,0.096-0.425,0.059-0.577-0.094l-3.865-3.865 C23.794,17.38,23.418,17.224,23.017,17.224L23.017,17.224z"
@@ -317,7 +317,7 @@ const Footer = () => {
             width="350"
             height="200"
             className="rounded-xl mb-5"
-            allowfullscreen="true"
+            allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
