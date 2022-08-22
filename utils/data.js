@@ -3,6 +3,7 @@ const data = {
     {
       id: 1,
       name: 'Free Shirt',
+      type: 'trends',
       slug: 'free-shirt',
       category: 'Shirts',
       image: '/images/shirt1.jpg',
@@ -16,6 +17,7 @@ const data = {
     {
       id: 2,
       name: 'Fit Shirt',
+      type: 'trends',
       slug: 'fit-shirt',
       category: 'Shirts',
       image: '/images/shirt2.jpg',
@@ -29,6 +31,7 @@ const data = {
     {
       id: 3,
       name: 'Slim Shirt',
+      type: 'trends',
       slug: 'slim-shirt',
       category: 'Shirts',
       image: '/images/shirt3.jpg',
@@ -42,6 +45,7 @@ const data = {
     {
       id: 4,
       name: 'Golf Pant',
+      type: 'trends',
       slug: 'golf-pant',
       category: 'Pants',
       image: '/images/pants1.jpg',
@@ -54,6 +58,7 @@ const data = {
     },
     {
       id: 5,
+      type: 'trends',
       name: 'Fit Pant',
       slug: 'fit-pant',
       category: 'Pants',
@@ -68,6 +73,7 @@ const data = {
     {
       id: 6,
       name: 'Classic Pant',
+      type: 'trends',
       slug: 'classic-pant',
       category: 'Pants',
       image: '/images/pants3.jpg',

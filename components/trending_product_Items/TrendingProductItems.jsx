@@ -1,10 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Link from 'next/link';
-const ProductItems = ({ product }) => {
+import Button from '../button/Button';
+const TrendingProductItems = ({ product }) => {
   return (
     <div className="card group overflow-hidden w-80 md:w-full mx-auto">
-      <Link href={`/products/${product.slug}`}>
+      <Link href={`/product/${product.slug}`}>
         <a>
           <img
             src={product.image}
@@ -14,7 +15,7 @@ const ProductItems = ({ product }) => {
         </a>
       </Link>
       <div className="flex flex-col ">
-        <Link href={`/products/${product.slug}`}>
+        <Link href={`/product/${product.slug}`}>
           <a>
             <h2 className="text-lg font-serif tracking-wide font-medium mt-3">
               {product.name}
@@ -23,17 +24,12 @@ const ProductItems = ({ product }) => {
         </Link>
         <p className="mb-2 text-sm">{product.brand}</p>
         <p className="text-sm">
-          <span className="font-serif">Tk. {product.price}+</span>
+          <span className="font-serif">Tk. {product.price}</span>
         </p>
-        <button
-          className=" bg-gray-300 mt-3 p-2 text-gray-700 font-medium rounded text-sm hover:bg-gray-300 hover:text-black active:bg-gray-400"
-          type="button"
-        >
-          Add to cart
-        </button>
+        <Button type="button" text="Add to cart" />
       </div>
     </div>
   );
 };
 
-export default ProductItems;
+export default TrendingProductItems;
