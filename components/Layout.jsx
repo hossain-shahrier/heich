@@ -1,6 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import Navbar from './navbar/Navbar';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Footer from './footer/Footer';
 
 const Layout = ({ children, title }) => {
@@ -14,6 +16,7 @@ const Layout = ({ children, title }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <ToastContainer position="bottom-left" limit={1} />
       <div className="flex min-h-screen relative flex-col justify-between">
         <header>
           <Navbar />

@@ -22,3 +22,5 @@ E-commerce application using NextJs,MongoDB,Tailwind-css.
 \*Create Login Form 1. Install react hook form 2. create Input Boxes 3. Add login Button
 
 \*Connect to Database(MongoDB) 1. Install mongoose 2. Install MongoDB or use MongoDB Atlas 3. Save connection URL in .env file 4. Create DB utils file 5. Create Sample User
+
+\*Login API 1. Install next-auth 2. nextauth.js 3. implement signin

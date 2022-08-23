@@ -1,7 +1,9 @@
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 import React, { useContext, useEffect, useState } from 'react';
 import { Store } from '../../utils/Store';
 const Navbar = () => {
+  const { status, data: session } = useSession();
   const { state } = useContext(Store);
   const { cart } = state;
   const [cartItemsCount, setCartItemsCount] = useState(0);
@@ -17,11 +19,17 @@ const Navbar = () => {
       <div className="">
         <ul className="flex items-center gap-5 cursor-pointer">
           <li>
-            <Link href="/login">
-              <a>
-                <h3 className="font-serif text-sm">LOGIN</h3>
-              </a>
-            </Link>
+            {status === 'loading' ? (
+              'Loading...'
+            ) : session?.user ? (
+              <span className="font-serif">{session.user.name}</span>
+            ) : (
+              <Link href="/login">
+                <a>
+                  <h3 className="font-serif text-sm">LOGIN</h3>
+                </a>
+              </Link>
+            )}
           </li>
           <li>
             <Link href="/cart">

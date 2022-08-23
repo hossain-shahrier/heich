@@ -1,16 +1,41 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
+import { signIn, useSession } from 'next-auth/react';
 import Button from '../components/button/Button';
 import Layout from '../components/Layout';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+import { getError } from '../utils/error';
+import { useRouter } from 'next/router';
 
 const Login = () => {
+  const router = useRouter();
+  const { redirect } = router.query;
+  const { data: session } = useSession();
+  useEffect(() => {
+    if (session?.user) {
+      router.push(redirect || '/');
+    }
+  }, [router, session, redirect]);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const submitHandler = ({ email, password }) => {};
+  const submitHandler = async ({ email, password }) => {
+    try {
+      const result = await signIn('credentials', {
+        redirect: false,
+        email,
+        password,
+      });
+      if (result.error) {
+        toast.error(result.error);
+      }
+    } catch (err) {
+      toast.error(getError.error);
+    }
+  };
   return (
     <Layout>
       <div className="">
@@ -54,7 +79,7 @@ const Login = () => {
               {...register('password', {
                 required: 'Please enter a password.',
                 minLength: {
-                  value: 6,
+                  value: 4,
                   message: 'password should be more than 5 characters.',
                 },
               })}
