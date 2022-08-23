@@ -24,3 +24,5 @@ E-commerce application using NextJs,MongoDB,Tailwind-css.
 \*Connect to Database(MongoDB) 1. Install mongoose 2. Install MongoDB or use MongoDB Atlas 3. Save connection URL in .env file 4. Create DB utils file 5. Create Sample User
 
 \*Login API 1. Install next-auth 2. nextauth.js 3. implement signin
+
+\*User Menu 1. check user authentication 2. Install headlessUI 3. show user menu form Navbar

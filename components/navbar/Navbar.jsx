@@ -1,16 +1,24 @@
 import Link from 'next/link';
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
+import Cookies from 'js-cookie';
+import { Menu } from '@headlessui/react';
 import React, { useContext, useEffect, useState } from 'react';
 import { Store } from '../../utils/Store';
+import DropdownLink from '../dropdown_link/DropdownLink';
 const Navbar = () => {
   const { status, data: session } = useSession();
-  const { state } = useContext(Store);
+  const { state, dispatch } = useContext(Store);
   const { cart } = state;
   const [cartItemsCount, setCartItemsCount] = useState(0);
   useEffect(() => {
     setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
   }, [cart.cartItems]);
-
+  // Logout
+  const logoutClickHandler = () => {
+    Cookies.remove('cart');
+    dispatch({ type: 'CLEAR_CART' });
+    signOut({ callbackUrl: '/login' });
+  };
   return (
     <nav className="flex items-center h-20 justify-between px-5 shadow">
       <div className="text-lg font-black tracking-widest cursor-pointer">
@@ -22,7 +30,35 @@ const Navbar = () => {
             {status === 'loading' ? (
               'Loading...'
             ) : session?.user ? (
-              <span className="font-serif">{session.user.name}</span>
+              <Menu as="div" className="relative inline-block">
+                <Menu.Button className="text-gray-800">
+                  <span className="font-serif">{session.user.name}</span>
+                </Menu.Button>
+                <Menu.Items className="absolute right-0 w-56 bg-gray-100 p-3 rounded-sm font-serif text-sm origin-top-right shadow-md">
+                  <Menu.Item>
+                    <DropdownLink className="dropdown-link" href="/profile">
+                      Profile
+                    </DropdownLink>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <DropdownLink
+                      className="dropdown-link"
+                      href="/order-history"
+                    >
+                      Order History
+                    </DropdownLink>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <a
+                      className="dropdown-link"
+                      href="#"
+                      onClick={logoutClickHandler}
+                    >
+                      Logout
+                    </a>
+                  </Menu.Item>
+                </Menu.Items>
+              </Menu>
             ) : (
               <Link href="/login">
                 <a>
