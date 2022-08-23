@@ -18,3 +18,5 @@ E-commerce application using NextJs,MongoDB,Tailwind-css.
 \*Handle Changing cart items 1. add select box for quantity 2. handle select box change
 
 \*Save Cart Items in LocalStore 1. Install js-cookie package 2. save and retrieve cart items from cookies
+
+\*Create Login Form 1. Install react hook form 2. create Input Boxes 3. Add login Button

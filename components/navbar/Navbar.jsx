@@ -17,9 +17,9 @@ const Navbar = () => {
       <div className="">
         <ul className="flex items-center gap-5 cursor-pointer">
           <li>
-            <Link href="/account">
+            <Link href="/login">
               <a>
-                <h3 className="font-serif text-sm">MY ACCOUNT</h3>
+                <h3 className="font-serif text-sm">LOGIN</h3>
               </a>
             </Link>
           </li>

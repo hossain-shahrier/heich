@@ -103,7 +103,7 @@ function Cart() {
                 <Button
                   type="button"
                   text="Checkout"
-                  handler={() => router.push('/shipping')}
+                  handler={() => router.push('login?redirect=/shipping')}
                 />
               </li>
             </ul>
