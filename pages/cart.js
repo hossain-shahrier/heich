@@ -6,8 +6,9 @@ import { Store } from '../utils/Store';
 import Image from 'next/image';
 import Button from '../components/button/Button';
 import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
 
-export const Cart = () => {
+function Cart() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const {
@@ -87,7 +88,7 @@ export const Cart = () => {
               </tbody>
             </table>
           </div>
-          <div className="border absolute right-7 top-5 w-1/5 rounded-md shadow-sm p-5 my-5 lg:my-0">
+          <div className="border h-36 w-full rounded-md shadow-sm p-5 my-5 lg:my-0">
             <ul>
               <li>
                 <div className="pb-3 text-xl">
@@ -111,6 +112,6 @@ export const Cart = () => {
       )}
     </Layout>
   );
-};
+}
 
-export default Cart;
+export default dynamic(() => Promise.resolve(Cart), { ssr: false });

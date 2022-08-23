@@ -16,3 +16,5 @@ E-commerce application using NextJs,MongoDB,Tailwind-css.
 \*Create Cart page 1. create cart.js 2. use context to get cart items 3. list items in cart items 4. redirect to cart screen after add to cart
 
 \*Handle Changing cart items 1. add select box for quantity 2. handle select box change
+
+\*Save Cart Items in LocalStore 1. Install js-cookie package 2. save and retrieve cart items from cookies
