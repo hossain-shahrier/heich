@@ -20,3 +20,5 @@ E-commerce application using NextJs,MongoDB,Tailwind-css.
 \*Save Cart Items in LocalStore 1. Install js-cookie package 2. save and retrieve cart items from cookies
 
 \*Create Login Form 1. Install react hook form 2. create Input Boxes 3. Add login Button
+
+\*Connect to Database(MongoDB) 1. Install mongoose 2. Install MongoDB or use MongoDB Atlas 3. Save connection URL in .env file 4. Create DB utils file 5. Create Sample User
