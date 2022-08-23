@@ -10,6 +10,7 @@ import Button from '../../components/button/Button';
 import { toast } from 'react-toastify';
 const Product = () => {
   const { state, dispatch } = useContext(Store);
+  const router = useRouter();
   const { query } = useRouter();
   const { slug } = query;
   const product = data.products.find((x) => x.slug === slug);
@@ -26,6 +27,7 @@ const Product = () => {
       type: 'CART_ADD_ITEM',
       payload: { ...product, quantity: quantity },
     });
+    router.push('/cart');
   };
   return (
     <Layout title={product.name}>
