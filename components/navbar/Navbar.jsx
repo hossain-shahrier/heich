@@ -34,7 +34,7 @@ const Navbar = () => {
                 <Menu.Button className="text-gray-800">
                   <span className="font-serif">{session.user.name}</span>
                 </Menu.Button>
-                <Menu.Items className="absolute right-0 w-56 bg-gray-100 p-3 rounded-sm font-serif text-sm origin-top-right shadow-md">
+                <Menu.Items className="absolute z-50 right-0 w-56 bg-gray-100 p-3 rounded-sm font-serif text-sm origin-top-right shadow-md">
                   <Menu.Item>
                     <DropdownLink className="dropdown-link" href="/profile">
                       Profile

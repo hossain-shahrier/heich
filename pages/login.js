@@ -52,7 +52,7 @@ const Login = () => {
               type="email"
               className="w-full p-2 my-2 border rounded-md outline-none"
               id="email"
-              autoFocus="true"
+              autoFocus
               {...register('email', {
                 required: 'Please enter an email address.',
                 pattern: {

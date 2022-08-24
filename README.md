@@ -26,3 +26,5 @@ E-commerce application using NextJs,MongoDB,Tailwind-css.
 \*Login API 1. Install next-auth 2. nextauth.js 3. implement signin
 
 \*User Menu 1. check user authentication 2. Install headlessUI 3. show user menu form Navbar
+
+\*Create Shipping Screen 1. Display address fields 2. save address in context
