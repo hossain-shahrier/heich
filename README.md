@@ -30,3 +30,8 @@ E-commerce application using NextJs,MongoDB,Tailwind-css.
 \*Create Shipping Screen 1. Display address fields 2. save address in context
 
 \*Create Payment Method Page 1. Display payment methods 2. Save payment method in the Context
+
+*Seed Sample products
+    1. Insert sample products to mongoDB
+    2. Load products from DB in Home
+    3. Check product count in Stock
