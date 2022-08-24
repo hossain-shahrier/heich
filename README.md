@@ -28,3 +28,5 @@ E-commerce application using NextJs,MongoDB,Tailwind-css.
 \*User Menu 1. check user authentication 2. Install headlessUI 3. show user menu form Navbar
 
 \*Create Shipping Screen 1. Display address fields 2. save address in context
+
+\*Create Payment Method Page 1. Display payment methods 2. Save payment method in the Context
