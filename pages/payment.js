@@ -68,18 +68,18 @@ export default function Payment() {
         ))}
         <div className="mb-4 flex flex-col justify-between">
           <button
-            className="bg-gray-300 mt-3 p-2 w-full text-gray-700 font-medium rounded text-sm hover:text-white hover:bg-gray-800 active:bg-gray-400"
-            type="button"
-            onClick={() => router.push('/shipping')}
-          >
-            Back
-          </button>
-          <button
             type="submit"
             text="Next"
             className="mt-2 bg-gray-800 font-medium p-2 rounded text-sm text-gray-100 shadow outline-none hover:bg-gray-300 hover:text-gray-700  active:bg-gray-300"
           >
             Next
+          </button>
+          <button
+            className="bg-gray-300 mt-3 p-2 w-full text-gray-700 font-medium rounded text-sm hover:text-white hover:bg-gray-800 active:bg-gray-400"
+            type="button"
+            onClick={() => router.push('/shipping')}
+          >
+            Back
           </button>
         </div>
       </form>

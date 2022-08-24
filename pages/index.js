@@ -23,7 +23,7 @@ export default function Home({ products }) {
       type: 'CART_ADD_ITEM',
       payload: { ...product, quantity: quantity },
     });
-    router.push('/cart');
+    // router.push('/cart');
   };
   return (
     <div className="">
@@ -34,7 +34,7 @@ export default function Home({ products }) {
             (product) =>
               product.type === 'trends' && (
                 <ProductItems
-                  key={product.id}
+                  key={product._id}
                   product={product}
                   addToCartHandler={addToCartHandler}
                 />
