@@ -104,11 +104,20 @@ export default function ProductPage(props) {
               </div>
             </div>
             <div className="w-full">
-              <Button
-                type="button"
-                handler={addToCartHandler}
-                text="Add to cart"
-              />
+              {product.countInStock > 0 ? (
+                <Button
+                  type="button"
+                  handler={addToCartHandler}
+                  text="Add to cart"
+                />
+              ) : (
+                <Button
+                  type="button"
+                  handler={addToCartHandler}
+                  text="Out of Stock"
+                  disabled={true}
+                />
+              )}
             </div>
           </div>
         </div>

@@ -8,3 +8,9 @@
 .dropdown-link {
   @apply flex p-2 hover:bg-gray-200 rounded-md;
 }
+.alert-success {
+  @apply bg-green-100 my-2 text-sm  rounded-sm p-2 text-green-600;
+}
+.alert-error {
+  @apply bg-red-100 my-2 text-sm rounded-sm p-2 text-red-600;
+}

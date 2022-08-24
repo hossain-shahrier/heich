@@ -35,4 +35,12 @@ E-commerce application using NextJs,MongoDB,Tailwind-css.
 
 \*Load Products from mongoDB 1. Load products in home page from mongoDB 2. Load products in product page from mongoDB 3. Use product API to check count in stock
 
-\*Create Place Order page 1. Display Shipping Address 2. Display Payment Method 3. Display Order Items 4. Implement Create Order
+\*Create Place Order page
+1.Display Shipping Address 2. Display Payment Method
+3.Display Order Items
+4.Implement Create Order
+
+\*Order page
+1.Backend API for Order details
+2.Load order from API
+3.Display order details

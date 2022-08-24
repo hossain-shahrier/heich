@@ -121,16 +121,20 @@ export default function PlaceOrder() {
                               alt={item.name}
                               width={50}
                               height={50}
-                              className="object-cover rounded-md"
+                              className="object-cover rounded-sm"
                             ></Image>
                             &nbsp;
                             <span className="text-sm">{item.name}</span>
                           </a>
                         </Link>
                       </td>
-                      <td className=" p-5 text-right">{item.quantity}</td>
-                      <td className="p-5 text-right">${item.price}</td>
-                      <td className="p-5 text-right">
+                      <td className=" p-5 text-right font-serif">
+                        {item.quantity}
+                      </td>
+                      <td className="p-5 text-right font-serif">
+                        ${item.price}
+                      </td>
+                      <td className="p-5 text-right font-serif">
                         ${item.quantity * item.price}
                       </td>
                     </tr>
