@@ -31,7 +31,6 @@ E-commerce application using NextJs,MongoDB,Tailwind-css.
 
 \*Create Payment Method Page 1. Display payment methods 2. Save payment method in the Context
 
-*Seed Sample products
-    1. Insert sample products to mongoDB
-    2. Load products from DB in Home
-    3. Check product count in Stock
+\*Seed Sample products 1. Insert sample products to mongoDB 2. Load products from DB in Home 3. Check product count in Stock
+
+\*Load Products from mongoDB 1. Load products in home page from mongoDB 2. Load products in product page from mongoDB 3. Use product API to check count in stock

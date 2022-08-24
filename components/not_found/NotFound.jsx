@@ -1,8 +1,14 @@
 import React from 'react';
+import Layout from '../Layout';
 
 const NotFound = ({ error }) => {
   return (
-    <div className="flex items-center justify-center h-screen">{error}</div>
+    <Layout
+      title="Not Found"
+      className="flex items-center justify-center h-screen"
+    >
+      {error}
+    </Layout>
   );
 };
 

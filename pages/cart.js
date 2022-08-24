@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
+import axios from 'axios';
 import Link from 'next/link';
+import { toast } from 'react-toastify';
 import Layout from '../components/Layout';
 import { XCircleIcon } from '@heroicons/react/outline';
 import { Store } from '../utils/Store';
@@ -14,11 +16,17 @@ function Cart() {
   const {
     cart: { cartItems },
   } = state;
+  // Remove Cart
   const removeItemHandler = (item) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
   };
-  const updateCartHandler = (item, qty) => {
+  // Update Cart
+  const updateCartHandler = async (item, qty) => {
     const quantity = Number(qty);
+    const { data } = await axios.get(`/api/products/${item._id}`);
+    if (data.countInStock < quantity) {
+      return toast.error('Sorry, product is out of stock');
+    }
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
   };
   return (

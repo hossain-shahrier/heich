@@ -30,6 +30,13 @@ export default function Payment() {
   };
   useEffect(() => {
     if (!shippingAddress.address) {
+      router.push('/shipping');
+    }
+    setSelectedPaymentMethod(paymentMethod || '');
+  }, [paymentMethod, router, shippingAddress.address]);
+
+  useEffect(() => {
+    if (!shippingAddress.address) {
       return router.push('/shipping');
     }
     setSelectedPaymentMethod(paymentMethod || '');

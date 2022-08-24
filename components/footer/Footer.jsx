@@ -82,7 +82,7 @@ const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link href="/payment">
+            <Link href="/payment-methods">
               <a>Payment Methods</a>
             </Link>
           </li>

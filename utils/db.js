@@ -28,5 +28,11 @@ async function disconnect() {
     console.log('Not disconnected');
   }
 }
-const db = { connect, disconnect };
+function convertDocToObj(doc) {
+  doc._id = doc._id.toString();
+  doc.createdAt = doc.createdAt.toString();
+  doc.updatedAt = doc.updatedAt.toString();
+  return doc;
+}
+const db = { connect, disconnect, convertDocToObj };
 export default db;
