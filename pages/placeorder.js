@@ -86,7 +86,7 @@ export default function PlaceOrder() {
               </div>
               <div className="mt-2">
                 <span className="bg-gray-200 px-2 py-1 border rounded-sm text-sm text-gray-600 font-mono hover:text-gray-900 cursor-pointer">
-                  <Link href="/payment">Edit</Link>
+                  <Link href="/shipping">Edit</Link>
                 </span>
               </div>
             </div>
