@@ -1,11 +1,38 @@
 import Link from 'next/link';
 import { signOut, useSession } from 'next-auth/react';
+// Icons
+import { HiMenuAlt4 } from 'react-icons/hi';
+// import { AiOutlineCustomerService } from 'react-icons/ai';
 import Cookies from 'js-cookie';
 import { Menu } from '@headlessui/react';
-import React, { useContext, useEffect, useState } from 'react';
+// MenuBar
+import MenuBar from '../menu/MenuBar';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import { Store } from '../../utils/Store';
 import DropdownLink from '../dropdown_link/DropdownLink';
 const Navbar = () => {
+  const ref = useRef();
+  // Menu Collaspe
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      // If the menu is open and the clicked target is not within the menu,
+      // then close the menu
+      if (isMenuOpen && ref.current && !ref.current.contains(e.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', checkIfClickedOutside);
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener('mousedown', checkIfClickedOutside);
+    };
+  }, [isMenuOpen]);
+
+  // session
   const { status, data: session } = useSession();
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
@@ -20,12 +47,17 @@ const Navbar = () => {
     signOut({ callbackUrl: '/login' });
   };
   return (
-    <nav className="flex items-center h-20 justify-between px-5 shadow">
-      <div className="text-lg font-black tracking-widest cursor-pointer">
-        <Link href="/">HEICH</Link>
+    <nav
+      ref={ref}
+      className="flex items-center h-20 justify-between px-5 shadow"
+    >
+      <div className="text-2xl uppercase font-black cursor-pointer">
+        <Link href="/">
+          <a>heich</a>
+        </Link>
       </div>
       <div className="">
-        <ul className="flex items-center gap-5 cursor-pointer">
+        <ul className="flex  items-center gap-5 cursor-pointer">
           <li>
             {status === 'loading' ? (
               'Loading...'
@@ -61,16 +93,16 @@ const Navbar = () => {
               </Menu>
             ) : (
               <Link href="/login">
-                <a>
-                  <h3 className="font-serif text-sm">LOGIN</h3>
+                <a className="flex items-center justify-center gap-2">
+                  <h3 className="">LOGIN</h3>
                 </a>
               </Link>
             )}
           </li>
-          <li>
+          <li className="relative">
             <Link href="/cart">
               <a>
-                <div className="relative flex">
+                <div className="flex">
                   <svg
                     className="w-6 h-6"
                     fill="none"
@@ -86,7 +118,7 @@ const Navbar = () => {
                     />
                   </svg>
                   {cartItemsCount > 0 && (
-                    <span className="absolute left-3 bottom-3 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">
+                    <span className="absolute left-3 bottom-3 rounded-full bg-red-600 w-4 h-4 p-0 m-0 text-white  text-sm leading-tight text-center">
                       {cartItemsCount}
                     </span>
                   )}
@@ -114,21 +146,14 @@ const Navbar = () => {
               </a>
             </Link>
           </li>
-          <li>
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h7"
+          <li className="relative">
+            <span onClick={menuToggle}>
+              <HiMenuAlt4
+                className="bg-black  text-white  rounded-full p-1"
+                size={25}
               />
-            </svg>
+            </span>
+            {isMenuOpen && <MenuBar clicked={menuToggle} />}
           </li>
         </ul>
       </div>

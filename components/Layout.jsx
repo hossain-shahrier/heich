@@ -4,6 +4,7 @@ import Navbar from './navbar/Navbar';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './footer/Footer';
+import { SecondaryNav } from './secondary_nav/SecondaryNav';
 
 const Layout = ({ children, title }) => {
   return (
@@ -20,6 +21,7 @@ const Layout = ({ children, title }) => {
       <div className="flex min-h-screen relative flex-col justify-between">
         <header>
           <Navbar />
+          <SecondaryNav />
         </header>
         <main className="container m-auto mt-4 px-4">{children}</main>
         <footer>
