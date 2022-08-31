@@ -53,7 +53,7 @@ function Cart() {
               </thead>
               <tbody>
                 {cartItems.map((item) => (
-                  <tr key={item.id} className="border-b">
+                  <tr key={item._id} className="border-b">
                     <td>
                       <Link href={`/product/${item.slug}`}>
                         <a className="flex items-center">

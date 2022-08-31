@@ -311,17 +311,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className="mb-8 lg:mb-0">
-        <div className="hidden lg:flex">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d116834.13669278496!2d90.4193257!3d23.7806365!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1661119114043!5m2!1sen!2sbd"
-            width="350"
-            height="200"
-            className="rounded-xl mb-5"
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
+        <div className="hidden lg:flex"></div>
         <div className="flex flex-col gap-1">
           <span className="font-bold">Location</span>
           <h3 className="  mb-5">
