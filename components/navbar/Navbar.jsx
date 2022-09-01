@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { signOut, useSession } from 'next-auth/react';
-// Icons
+
 import { HiMenuAlt4 } from 'react-icons/hi';
+import { IoIosSearch } from 'react-icons/io';
 // import { AiOutlineCustomerService } from 'react-icons/ai';
 import Cookies from 'js-cookie';
 import { Menu } from '@headlessui/react';
@@ -49,12 +50,20 @@ const Navbar = () => {
   return (
     <nav
       ref={ref}
-      className="flex items-center h-20 justify-between px-5 shadow"
+      className="flex items-center justify-between h-20 px-5 shadow"
     >
-      <div className="text-2xl uppercase font-black cursor-pointer">
-        <Link href="/">
-          <a>heich</a>
-        </Link>
+      <div className="flex items-center gap-2">
+        <div className="relative md:hidden">
+          <span onClick={menuToggle}>
+            <HiMenuAlt4 className="cursor-pointer" size={25} />
+          </span>
+          {isMenuOpen && <MenuBar clicked={menuToggle} />}
+        </div>
+        <div className="text-2xl text-center uppercase font-black cursor-pointer">
+          <Link href="/">
+            <a>heich</a>
+          </Link>
+        </div>
       </div>
       <div className="">
         <ul className="flex  items-center gap-5 cursor-pointer">
@@ -66,7 +75,7 @@ const Navbar = () => {
                 <Menu.Button className="text-gray-800">
                   <span className="font-serif">{session.user.name}</span>
                 </Menu.Button>
-                <Menu.Items className="absolute z-50 right-0 w-56 bg-gray-100 p-3 rounded-sm font-serif text-sm origin-top-right shadow-md">
+                <Menu.Items className="absolute menu right-0 w-56 bg-gray-100 p-3 rounded-sm font-serif text-sm origin-top-right shadow-md">
                   <Menu.Item>
                     <DropdownLink className="dropdown-link" href="/profile">
                       Profile
@@ -127,33 +136,23 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/search">
-              <a>
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </a>
-            </Link>
-          </li>
-          <li className="relative">
-            <span onClick={menuToggle}>
-              <HiMenuAlt4
-                className="bg-black  text-white  rounded-full p-1"
-                size={25}
-              />
-            </span>
-            {isMenuOpen && <MenuBar clicked={menuToggle} />}
+            <IoIosSearch
+              size={25}
+              className=" text-gray-900 bottom-1 left-[-4px] "
+            />
+            <div>
+              <form className="flex relative items-center gap-1">
+                {/* <input
+                  type="text"
+                  placeholder="Search products"
+                  spellCheck="false"
+                  autoCorrect="false"
+                  autoComplete="off"
+                  aria-label="Search products"
+                  className="outline-none border-b-2 pl-6 text-black placeholder-black border-b-gray-700 w-44"
+                /> */}
+              </form>
+            </div>
           </li>
         </ul>
       </div>

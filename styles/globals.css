@@ -14,3 +14,11 @@
 .alert-error {
   @apply bg-red-100 my-2 text-sm rounded-sm p-2 text-red-600;
 }
+.menu {
+  z-index: 999;
+}
+/* @layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+  }
+} */

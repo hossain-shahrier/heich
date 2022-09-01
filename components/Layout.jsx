@@ -18,11 +18,12 @@ const Layout = ({ children, title }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ToastContainer position="bottom-left" limit={1} />
-      <div className="flex min-h-screen relative flex-col justify-between">
-        <header>
+      <div className="flex relative min-h-screen flex-col justify-between">
+        <header className="w-full bg-white z-40">
           <Navbar />
           <SecondaryNav />
         </header>
+
         <main className="container m-auto mt-4 px-4">{children}</main>
         <footer>
           <Footer />
