@@ -35,13 +35,13 @@ export default function ProductPage(props) {
     <Layout title={product.name}>
       <div className="py-2">
         <Link href="/">
-          <a className="bg-gray-200 p-2 border rounded-md text-sm text-gray-600">
+          <a className="p-3 text-sm bg-[#f3f5f7]  text-[#495b6e]">
             Back to products
           </a>
         </Link>
       </div>
-      <div className="grid md:grid-cols-3 md:gap-6 lg:grid-cols-5 lg:gap7">
-        <div className="md:col-span-2 my-5 ">
+      <div className="grid md:grid-cols-3 md:gap-6 lg:grid-cols-7 lg:gap-7">
+        <div className="md:col-span-2 my-5">
           <Image
             src={product.image}
             alt={product.name}
@@ -51,7 +51,7 @@ export default function ProductPage(props) {
             layout="responsive"
           />
         </div>
-        <div className="md:col-span-2 my-5 lg:my-0">
+        <div className="md:col-span-3 my-5 lg:my-0">
           <ul>
             <li>
               <h1 className="text-5xl font-serif tracking-wide font-medium mt-3">
@@ -85,40 +85,39 @@ export default function ProductPage(props) {
             </li>
           </ul>
         </div>
-        <div>
-          <div className="border rounded-md shadow-sm p-5 my-5 lg:my-0">
-            <div className="mb-2 flex justify-between">
-              <span className="text-md">Price</span>
-              <div>
-                <p className="text-sm">
-                  <span className="font-serif">Tk. {product.price}</span>
-                </p>
-              </div>
+
+        <div className="border w-80 max-h-40 md:col-span-1 shadow-md p-5 my-5 lg:my-0">
+          <div className="mb-2 flex justify-between">
+            <span className="text-md">Price</span>
+            <div>
+              <p className="text-sm">
+                <span className="font-serif">Tk. {product.price}</span>
+              </p>
             </div>
-            <div className="mb-2 flex justify-between">
-              <span className="text-md">Status</span>
-              <div>
-                <span className="font-serif">
-                  {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
-                </span>
-              </div>
+          </div>
+          <div className="mb-2 flex justify-between">
+            <span className="text-md">Status</span>
+            <div>
+              <span className="font-serif">
+                {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
+              </span>
             </div>
-            <div className="w-full">
-              {product.countInStock > 0 ? (
-                <Button
-                  type="button"
-                  handler={addToCartHandler}
-                  text="Add to cart"
-                />
-              ) : (
-                <Button
-                  type="button"
-                  handler={addToCartHandler}
-                  text="Out of Stock"
-                  disabled={true}
-                />
-              )}
-            </div>
+          </div>
+          <div className="w-full">
+            {product.countInStock > 0 ? (
+              <Button
+                type="button"
+                handler={addToCartHandler}
+                text="Add to cart"
+              />
+            ) : (
+              <Button
+                type="button"
+                handler={addToCartHandler}
+                text="Out of Stock"
+                disabled={true}
+              />
+            )}
           </div>
         </div>
       </div>

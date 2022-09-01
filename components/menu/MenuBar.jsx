@@ -5,7 +5,7 @@ const MenuBar = ({ clicked }) => {
   return (
     <div className="fixed menu overflow-y-auto shadow-[0_35px_70px_-15px_rgba(0,0,0,0.3)] left-0 top-0 z-50 bg-gray-200 h-full min-h-full w-80">
       <span className="absolute cursor-pointer right-3 top-5" onClick={clicked}>
-        <AiOutlineCloseCircle size={29} />
+        <AiOutlineCloseCircle size={20} />
       </span>
       <ul className="flex flex-col justify-evenly items-center w-full mx-auto h-full m-4 cursor-pointer">
         <li className="hover:text-gray-700">Women</li>

@@ -21,4 +21,22 @@
   html {
     font-family: 'Lato', sans-serif;
   }
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #f3f4f7;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #5a7087;
+    border-radius: 100vh;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #415162;
+  }
 }

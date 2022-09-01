@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         <PayPalScriptProvider deferLoading={true}>
           {Component.auth ? (
             <Auth>
-              <Component {...pageProps} />
+              <Component {...pageProps}/>
             </Auth>
           ) : (
             <Component {...pageProps} />

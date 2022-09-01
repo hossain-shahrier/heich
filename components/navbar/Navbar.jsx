@@ -56,7 +56,7 @@ const Navbar = () => {
       <div className="flex items-center gap-2">
         <div className="relative md:hidden">
           <span onClick={menuToggle}>
-            <HiMenuAlt4 className="cursor-pointer" size={25} />
+            <HiMenuAlt4 className="cursor-pointer" size={20} />
           </span>
           {isMenuOpen && <MenuBar clicked={menuToggle} />}
         </div>
