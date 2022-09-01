@@ -70,7 +70,7 @@ const Navbar = () => {
         <ul className="flex items-center gap-3 cursor-pointer">
           <li>
             {status === 'loading' ? (
-              'Loading...'
+              <span className="text-xs font-serif">Loading...</span>
             ) : session?.user ? (
               <Menu as="div" className="relative inline-block">
                 <Menu.Button className="text-gray-800">
