@@ -6,13 +6,13 @@ import Button from '../button/Button';
 
 const TrendingProductItems = ({ product, addToCartHandler }) => {
   return (
-    <div className=" group overflow-hidden md:w-full">
+    <div className="overflow-hidden md:w-full">
       <Link href={`/product/${product.slug}`}>
         <a>
           <img
             src={product.image}
             alt={product.name}
-            className="shadow object-cover w-full h-72 group-hover:scale-105 transition-transform duration-200 ease-in-out"
+            className="object-cover w-full h-72 group-hover:scale-105 transition-transform duration-300 ease-in-out"
           />
         </a>
       </Link>

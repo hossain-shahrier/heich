@@ -26,10 +26,10 @@ export default function Home({ products }) {
     // router.push('/cart');
   };
   return (
-    <div>
-      <Layout title="Home page">
+    <Layout title="Home page">
+      <div className="my-4">
         <h1 className="text-xl font-serif mb-3">Latest Trends</h1>
-        <div className="mx-auto grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-4">
+        <div className="mx-auto grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
           {products.map(
             (product) =>
               product.type === 'trends' && (
@@ -41,8 +41,8 @@ export default function Home({ products }) {
               )
           )}
         </div>
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   );
 }
 export async function getServerSideProps(context) {

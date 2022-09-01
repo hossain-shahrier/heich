@@ -17,3 +17,8 @@
 .menu {
   z-index: 999;
 }
+@layer base {
+  html {
+    font-family: 'Lato', sans-serif;
+  }
+}

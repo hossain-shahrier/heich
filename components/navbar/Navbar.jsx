@@ -3,6 +3,7 @@ import { signOut, useSession } from 'next-auth/react';
 
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { IoIosSearch } from 'react-icons/io';
+import { RiShoppingBag2Line } from 'react-icons/ri';
 // import { AiOutlineCustomerService } from 'react-icons/ai';
 import Cookies from 'js-cookie';
 import { Menu } from '@headlessui/react';
@@ -66,7 +67,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="">
-        <ul className="flex items-center gap-5 cursor-pointer">
+        <ul className="flex items-center gap-3 cursor-pointer">
           <li>
             {status === 'loading' ? (
               'Loading...'
@@ -103,7 +104,7 @@ const Navbar = () => {
             ) : (
               <Link href="/login">
                 <a className="flex items-center font-serif justify-center gap-2">
-                  <h3 className="">Login</h3>
+                  <h3 className="text-sm">Login</h3>
                 </a>
               </Link>
             )}
@@ -112,22 +113,9 @@ const Navbar = () => {
             <Link href="/cart">
               <a>
                 <div className="flex">
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                    />
-                  </svg>
+                  <RiShoppingBag2Line size={17} />
                   {cartItemsCount > 0 && (
-                    <span className="absolute left-3 bottom-3 rounded-full bg-red-600 w-4 h-4 p-0 m-0 text-white  text-sm leading-tight text-center">
+                    <span className="absolute left-2 bottom-2 rounded-full bg-red-600 w-4 h-4 p-0 m-0 text-white text-xs leading-tight text-center">
                       {cartItemsCount}
                     </span>
                   )}
@@ -136,10 +124,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <IoIosSearch
-              size={25}
-              className=" text-gray-900 bottom-1 left-[-4px] "
-            />
+            <IoIosSearch size={20} />
             <div>
               <form className="flex relative items-center gap-1">
                 {/* <input
