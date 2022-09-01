@@ -59,14 +59,14 @@ const Navbar = () => {
           </span>
           {isMenuOpen && <MenuBar clicked={menuToggle} />}
         </div>
-        <div className="text-2xl text-center uppercase font-black cursor-pointer">
+        <div className="text-xl text-center uppercase font-black cursor-pointer">
           <Link href="/">
             <a>heich</a>
           </Link>
         </div>
       </div>
       <div className="">
-        <ul className="flex  items-center gap-5 cursor-pointer">
+        <ul className="flex items-center gap-5 cursor-pointer">
           <li>
             {status === 'loading' ? (
               'Loading...'
@@ -102,8 +102,8 @@ const Navbar = () => {
               </Menu>
             ) : (
               <Link href="/login">
-                <a className="flex items-center justify-center gap-2">
-                  <h3 className="">LOGIN</h3>
+                <a className="flex items-center font-serif justify-center gap-2">
+                  <h3 className="">Login</h3>
                 </a>
               </Link>
             )}

@@ -26,10 +26,10 @@ export default function Home({ products }) {
     // router.push('/cart');
   };
   return (
-    <div className="">
+    <div>
       <Layout title="Home page">
-        <h1 className="text-2xl font-serif mb-3">Latest Trends</h1>
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-4">
+        <h1 className="text-xl font-serif mb-3">Latest Trends</h1>
+        <div className="mx-auto grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-4">
           {products.map(
             (product) =>
               product.type === 'trends' && (

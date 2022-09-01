@@ -23,8 +23,10 @@ const Layout = ({ children, title }) => {
           <Navbar />
           <SecondaryNav />
         </header>
+        <div className="mx-auto">
+          <main className="container mx-auto mt-4 px-4 ">{children}</main>
+        </div>
 
-        <main className="container m-auto mt-4 px-4">{children}</main>
         <footer>
           <Footer />
         </footer>
