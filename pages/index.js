@@ -8,6 +8,7 @@ import db from '../utils/db';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 import { Store } from '../utils/Store';
+import Slider from '../components/slider/Slider';
 export default function Home({ products }) {
   const { state, dispatch } = useContext(Store);
   const router = useRouter();
@@ -28,18 +29,18 @@ export default function Home({ products }) {
   return (
     <Layout title="Home page">
       <div className="my-4">
+        <Slider />
         <h1 className="text-xl font-serif mb-3">Latest Trends</h1>
-        <div className="mx-auto grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
-          {products.map(
-            (product) =>
-              product.type === 'trends' && (
-                <ProductItems
-                  key={product._id}
-                  product={product}
-                  addToCartHandler={addToCartHandler}
-                />
-              )
-          )}
+        <div className="mx-auto grid grid-cols-2 gap-14 md:grid-cols-3 lg:grid-cols-5">
+          {products
+            .filter((product, index) => product.type === 'trends' && index < 5)
+            .map((product) => (
+              <ProductItems
+                key={product._id}
+                product={product}
+                addToCartHandler={addToCartHandler}
+              />
+            ))}
         </div>
       </div>
     </Layout>

@@ -2,9 +2,9 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Button from '../button/Button';
+// import Button from '../button/Button';
 
-const TrendingProductItems = ({ product, addToCartHandler }) => {
+const TrendingProductItems = ({ product }) => {
   return (
     <div className="overflow-hidden md:w-full">
       <Link href={`/product/${product.slug}`}>
@@ -19,20 +19,20 @@ const TrendingProductItems = ({ product, addToCartHandler }) => {
       <div className="flex flex-col ">
         <Link href={`/product/${product.slug}`}>
           <a>
-            <h2 className="text-lg font-serif tracking-wide font-medium mt-3">
+            <h2 className="text-lg font-serif tracking-wide font-medium mt-2">
               {product.name}
             </h2>
           </a>
         </Link>
-        <p className="mb-2 text-sm">{product.brand}</p>
+        <p className=" text-sm">{product.brand}</p>
         <p className="text-sm">
           <span className="font-serif">Tk. {product.price}</span>
         </p>
-        <Button
+        {/* <Button
           type="button"
           handler={() => addToCartHandler(product)}
           text="Add to cart"
-        />
+        /> */}
       </div>
     </div>
   );
