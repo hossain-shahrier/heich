@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
-// eslint-disable-next-line react-hooks/rules-of-hooks
-const ImageSlider = ({ slides }) => {
+const ComponentSlider = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
@@ -32,21 +31,21 @@ const ImageSlider = ({ slides }) => {
       </div>
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].image})` }}
-        className="w-full h-full bg-center bg-cover"
-      ></div>
-      <div className="flex justify-center">
+        className="w-full h-full flex bg-center bg-cover bg-[#94949487] bg-blend-multiply"
+      >
+        <h1></h1>
+      </div>
+      <div className="flex justify-center mt-3">
         {slides.map((slide, slideIndex) => (
           <div
-            className="mr-3 cursor-pointer"
+            className={slideIndex === currentIndex ? 'active dot' : 'dot'}
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
-          >
-            &#9679;
-          </div>
+          ></div>
         ))}
       </div>
     </div>
   );
 };
 
-export default ImageSlider;
+export default ComponentSlider;

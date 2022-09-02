@@ -43,3 +43,24 @@
 .secondary-button {
   @apply bg-[#f3f5f7] text-[#495b6e] hover:text-[#080a0c];
 }
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid #5a7087;
+  margin: 0 5px;
+  background: #ffffff;
+}
+.dot.active {
+  background: #5a7087;
+  border: none;
+  margin-right: 10px;
+  border-radius: 10px;
+  width: 40px;
+  height: 5px;
+}
+
+.dot.active:hover {
+  background: #415162;
+}

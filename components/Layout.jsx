@@ -24,7 +24,7 @@ const Layout = ({ children, title }) => {
           <SecondaryNav />
         </header>
         <div className="mx-auto">
-          <main className="container mx-auto mt-4 px-4">
+          <main className="container mx-auto px-4">
             {children}
           </main>
         </div>

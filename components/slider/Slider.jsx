@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageSlider from './componentSlider';
+import ComponentSlider from './ComponentSlider';
 export default function Slider() {
   const slides = [
     { image: '/images/model1.jpg', title: 'Formal' },
@@ -9,8 +9,8 @@ export default function Slider() {
   ];
   return (
     <div className="w-full mb-5 p-5">
-      <div className="container w-[60rem] h-[25rem] mx-auto">
-        <ImageSlider slides={slides} />
+      <div className="container w-[60rem] h-[28rem] mx-auto cursor-pointer">
+        <ComponentSlider slides={slides} />
       </div>
     </div>
   );
