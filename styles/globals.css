@@ -6,7 +6,7 @@
   @apply mb-5 block;
 }
 .dropdown-link {
-  @apply flex p-2 hover:bg-gray-200 rounded-md;
+  @apply flex p-4 hover:bg-gray-200 w-full;
 }
 .alert-success {
   @apply bg-green-100 my-2 text-sm  rounded-sm p-2 text-green-600;
@@ -39,4 +39,7 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #415162;
   }
+}
+.secondary-button {
+  @apply bg-[#f3f5f7] text-[#495b6e] hover:text-[#080a0c];
 }

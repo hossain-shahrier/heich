@@ -53,7 +53,7 @@ function Cart() {
               </thead>
               <tbody>
                 {cartItems.map((item) => (
-                  <tr key={item._id} className="border-b">
+                  <tr key={item._id} className="border-b text-xs">
                     <td>
                       <Link href={`/product/${item.slug}`}>
                         <a className="flex items-center">
@@ -62,10 +62,10 @@ function Cart() {
                             alt={item.name}
                             width={50}
                             height={50}
-                            className="object-cover border rounded-md"
+                            className="object-cover border rounded-full shadow-lg"
                           />
                           &nbsp;
-                          <span className="text-sm ml-2">{item.name}</span>
+                          <span className="ml-2">{item.name}</span>
                         </a>
                       </Link>
                     </td>
@@ -96,7 +96,7 @@ function Cart() {
               </tbody>
             </table>
           </div>
-          <div className="border h-36 w-full rounded-md shadow-sm p-5 my-5 lg:my-0">
+          <div className="border h-40 w-full shadow-md p-5 my-5 lg:my-0">
             <ul>
               <li>
                 <div className="pb-3 text-xl">

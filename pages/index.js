@@ -29,7 +29,7 @@ export default function Home({ products }) {
     <Layout title="Home page">
       <div className="my-4">
         <h1 className="text-xl font-serif mb-3">Latest Trends</h1>
-        <div className="mx-auto grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
+        <div className="mx-auto grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
           {products.map(
             (product) =>
               product.type === 'trends' && (

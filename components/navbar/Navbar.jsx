@@ -74,9 +74,11 @@ const Navbar = () => {
             ) : session?.user ? (
               <Menu as="div" className="relative inline-block">
                 <Menu.Button className="text-gray-800">
-                  <span className="font-serif">{session.user.name}</span>
+                  <span className="font-serif text-sm">
+                    {session.user.name}
+                  </span>
                 </Menu.Button>
-                <Menu.Items className="absolute menu right-0 w-56 bg-gray-100 p-3 rounded-sm font-serif text-sm origin-top-right shadow-md">
+                <Menu.Items className="absolute menu right-0 w-56  bg-[#f3f5f7] font-serif text-sm origin-top-right shadow-md">
                   <Menu.Item>
                     <DropdownLink className="dropdown-link" href="/profile">
                       Profile
@@ -97,6 +99,11 @@ const Navbar = () => {
                       onClick={logoutClickHandler}
                     >
                       Logout
+                    </a>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <a className="dropdown-link" href="/help">
+                      Help
                     </a>
                   </Menu.Item>
                 </Menu.Items>

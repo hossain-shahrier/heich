@@ -75,9 +75,55 @@ export default function PlaceOrder() {
           </span>
         </div>
       ) : (
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 md:gap-5">
-          <div className="overflow-x-auto md:col-span-3 ">
-            <div className="border my-5 rounded-md shadow-md p-10">
+        <div className="grid lg:grid-cols-9 md:grid-cols-3 md:gap-5">
+          <div className="border md:col-span-6 my-5 rounded-md shadow-md p-5 overflow-x-auto">
+            <h2 className="mb-2 text-lg">Order Items</h2>
+            <table className="min-w-full">
+              <thead className="border-b">
+                <tr>
+                  <th className="px-5 text-left">Item</th>
+                  <th className="p-5 text-right">Quantity</th>
+                  <th className="p-5 text-right">Price</th>
+                  <th className="p-5 text-right">Subtotal</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cartItems.map((item) => (
+                  <tr key={item._id} className="border-b text-xs">
+                    <td>
+                      <Link href={`/product/${item.slug}`}>
+                        <a className="flex items-center ">
+                          <Image
+                            src={item.image}
+                            alt={item.name}
+                            width={40}
+                            height={40}
+                            className="object-cover rounded-full"
+                          ></Image>
+                          &nbsp;
+                          <span className="ml-2">{item.name}</span>
+                        </a>
+                      </Link>
+                    </td>
+                    <td className="p-5 text-right font-serif">
+                      {item.quantity}
+                    </td>
+                    <td className="p-5 text-right font-serif">${item.price}</td>
+                    <td className="p-5 text-right font-serif">
+                      ${item.quantity * item.price}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div className="mt-2">
+              <span className=" px-2 py-1 border text-xs secondary-button cursor-pointer">
+                <Link href="/">Edit</Link>
+              </span>
+            </div>
+          </div>
+          <div className="overflow-x-auto md:col-span-3">
+            <div className="border my-5 rounded-md shadow-md p-5">
               <h2 className="mb-2 text-lg">Shipping Address</h2>
               <div className="font-medium  text-sm">
                 {shippingAddress.fullName}, {shippingAddress.address},{' '}
@@ -85,106 +131,58 @@ export default function PlaceOrder() {
                 {shippingAddress.country}
               </div>
               <div className="mt-2">
-                <span className="bg-gray-200 px-2 py-1 border rounded-sm text-sm text-gray-600 font-mono hover:text-gray-900 cursor-pointer">
+                <span className="px-2 py-1 border text-xs secondary-button  cursor-pointer">
                   <Link href="/shipping">Edit</Link>
                 </span>
               </div>
             </div>
-            <div className="border my-5 rounded-md shadow-md p-10">
+            <div className="border my-5 rounded-md shadow-md p-5">
               <h2 className="mb-2 text-lg">Payment Method</h2>
               <div className="font-medium  text-sm">{paymentMethod}</div>
               <div className="mt-2">
-                <span className="bg-gray-200 px-2 py-1 border rounded-sm text-sm text-gray-600 font-mono hover:text-gray-900 cursor-pointer">
+                <span className="px-2 py-1 border text-xs secondary-button cursor-pointer">
                   <Link href="/payment">Edit</Link>
                 </span>
               </div>
             </div>
-            <div className="border my-5 rounded-md shadow-md p-10 overflow-x-auto">
-              <h2 className="mb-2  text-lg">Order Items</h2>
-              <table className="min-w-full">
-                <thead className="border-b">
-                  <tr>
-                    <th className="px-5 text-left">Item</th>
-                    <th className="    p-5 text-right">Quantity</th>
-                    <th className="  p-5 text-right">Price</th>
-                    <th className="p-5 text-right">Subtotal</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {cartItems.map((item) => (
-                    <tr key={item._id} className="border-b">
-                      <td>
-                        <Link href={`/product/${item.slug}`}>
-                          <a className="flex items-center ">
-                            <Image
-                              src={item.image}
-                              alt={item.name}
-                              width={50}
-                              height={50}
-                              className="object-cover rounded-sm"
-                            ></Image>
-                            &nbsp;
-                            <span className="text-sm">{item.name}</span>
-                          </a>
-                        </Link>
-                      </td>
-                      <td className=" p-5 text-right font-serif">
-                        {item.quantity}
-                      </td>
-                      <td className="p-5 text-right font-serif">
-                        ${item.price}
-                      </td>
-                      <td className="p-5 text-right font-serif">
-                        ${item.quantity * item.price}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              <div className="mt-2">
-                <span className="bg-gray-200 px-2 py-1 border rounded-sm text-sm text-gray-600 font-mono hover:text-gray-900 cursor-pointer">
-                  <Link href="/">Edit</Link>
-                </span>
+            <div className="">
+              <div className="border my-5 w-full h-1/4 shadow-md p-5">
+                <h2 className="mb-2 text-lg">Order Summary</h2>
+                <ul className="text-sm">
+                  <li>
+                    <div className="mb-2 flex  justify-between">
+                      <div>Items</div>
+                      <span className="font-serif ">${itemsPrice}</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="mb-2 flex justify-between">
+                      <div>Tax</div>
+                      <div className="font-serif text-sm">${taxPrice}</div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="mb-2 flex justify-between">
+                      <div>Shipping</div>
+                      <div className="font-serif text-sm">${shippingPrice}</div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="mb-2 flex justify-between">
+                      <div>Total</div>
+                      <div className="font-serif text-sm">${totalPrice}</div>
+                    </div>
+                  </li>
+                  <li>
+                    <Button
+                      disabled={loading}
+                      handler={placeOrderHandler}
+                      type="button"
+                      text={loading ? 'Loading...' : 'Place Order'}
+                    />
+                  </li>
+                </ul>
               </div>
-            </div>
-          </div>
-          <div>
-            <div className="border my-5 rounded-md shadow-md p-10">
-              <h2 className="mb-2 text-lg">Order Summary</h2>
-              <ul>
-                <li>
-                  <div className="mb-2 flex justify-between">
-                    <div>Items</div>
-                    <span className="font-serif text-sm">${itemsPrice}</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="mb-2 flex justify-between">
-                    <div>Tax</div>
-                    <div className="font-serif text-sm">${taxPrice}</div>
-                  </div>
-                </li>
-                <li>
-                  <div className="mb-2 flex justify-between">
-                    <div>Shipping</div>
-                    <div className="font-serif text-sm">${shippingPrice}</div>
-                  </div>
-                </li>
-                <li>
-                  <div className="mb-2 flex justify-between">
-                    <div>Total</div>
-                    <div className="font-serif text-sm">${totalPrice}</div>
-                  </div>
-                </li>
-                <li>
-                  <Button
-                    disabled={loading}
-                    handler={placeOrderHandler}
-                    type="button"
-                    text={loading ? 'Loading...' : 'Place Order'}
-                  />
-                </li>
-              </ul>
             </div>
           </div>
         </div>

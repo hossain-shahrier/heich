@@ -35,7 +35,7 @@ export default function ProductPage(props) {
     <Layout title={product.name}>
       <div className="py-2">
         <Link href="/">
-          <a className="p-3 text-sm bg-[#f3f5f7]  text-[#495b6e]">
+          <a className="p-3 text-sm secondary-button ">
             Back to products
           </a>
         </Link>
