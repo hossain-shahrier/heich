@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
-const ComponentSlider = ({ slides }) => {
+export default function ComponentSlider({ slides }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
@@ -46,6 +46,4 @@ const ComponentSlider = ({ slides }) => {
       </div>
     </div>
   );
-};
-
-export default ComponentSlider;
+}
