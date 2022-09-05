@@ -6,18 +6,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      // sans: ['Helvetica', 'Arial', 'sans-serif'],
-      sans: ['Lato', 'sans-serif'],
-      //
-      // sans: ['Helvetica Neue', 'Arial', 'sans-serif'],
-      serif: [
-        'sohne-var',
-        'Georgia',
-        'Cambria',
-        'Times New Roman',
-        'Times',
-        'serif',
-      ],
+      serif: ['mytext'],
     },
   },
   plugins: [require('tailwind-scrollbar')],

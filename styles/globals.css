@@ -19,7 +19,14 @@
 }
 @layer base {
   html {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+  }
+  @font-face {
+    font-family: mytext;
+    src: url('/freight_big_light.otf');
+  }
+  .text {
+    font-family: mytext;
   }
   ::-webkit-scrollbar {
     width: 5px;

@@ -3,7 +3,7 @@ import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 const MenuBar = ({ clicked }) => {
   return (
-    <div className="fixed menu overflow-y-auto shadow-[0_35px_70px_-15px_rgba(0,0,0,0.3)] left-0 top-0 z-50 bg-[#f3f5f7]  text-[#495b6e] text-sm h-full min-h-full w-80">
+    <div className="fixed menu overflow-y-auto shadow-[0_35px_70px_-15px_rgba(0,0,0,0.3)] left-0 top-0 z-50 bg-[#f3f5f7] text-[#495b6e] text-sm h-full min-h-full w-80">
       <span className="absolute cursor-pointer right-3 top-5" onClick={clicked}>
         <AiOutlineCloseCircle size={20} />
       </span>

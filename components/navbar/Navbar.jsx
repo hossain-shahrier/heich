@@ -12,12 +12,18 @@ import MenuBar from '../menu/MenuBar';
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import { Store } from '../../utils/Store';
 import DropdownLink from '../dropdown_link/DropdownLink';
+import { SearchBar } from '../search/SearchBar';
 const Navbar = () => {
   const ref = useRef();
   // Menu Collaspe
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // Search Collaspe
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const menuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+  const searchToggle = () => {
+    setIsSearchOpen(!isSearchOpen);
   };
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
@@ -26,13 +32,16 @@ const Navbar = () => {
       if (isMenuOpen && ref.current && !ref.current.contains(e.target)) {
         setIsMenuOpen(false);
       }
+      if (isSearchOpen && ref.current && !ref.current.contains(e.target)) {
+        setIsSearchOpen(false);
+      }
     };
     document.addEventListener('mousedown', checkIfClickedOutside);
     return () => {
       // Cleanup the event listener
       document.removeEventListener('mousedown', checkIfClickedOutside);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isSearchOpen]);
 
   // session
   const { status, data: session } = useSession();
@@ -67,18 +76,18 @@ const Navbar = () => {
         </div>
       </div>
       <div className="">
-        <ul className="flex items-center gap-3 cursor-pointer">
+        <ul className="flex items-center gap-2 md:gap-4 cursor-pointer">
           <li>
             {status === 'loading' ? (
-              <span className="text-xs font-serif">Loading...</span>
+              <span className="text-xs">Loading...</span>
             ) : session?.user ? (
               <Menu as="div" className="relative inline-block">
-                <Menu.Button className="text-gray-800">
-                  <span className="font-serif text-sm">
+                <Menu.Button className="font-bold">
+                  <span className="md:text-sm text-xs">
                     {session.user.name}
                   </span>
                 </Menu.Button>
-                <Menu.Items className="absolute menu right-0 w-56  bg-[#f3f5f7] font-serif text-sm origin-top-right shadow-md">
+                <Menu.Items className="absolute menu right-0 w-56 bg-[#f3f5f7] text-xs origin-top-right shadow-md">
                   <Menu.Item>
                     <DropdownLink className="dropdown-link" href="/profile">
                       Profile
@@ -111,40 +120,39 @@ const Navbar = () => {
             ) : (
               <Link href="/login">
                 <a className="flex items-center font-serif justify-center gap-2">
-                  <h3 className="text-sm">Login</h3>
+                  <h3 className="text-sm md:text-xs">Login</h3>
                 </a>
               </Link>
             )}
           </li>
-          <li className="relative">
+          {/* Cart */}
+          <li>
             <Link href="/cart">
               <a>
-                <div className="flex">
-                  <RiShoppingBag2Line size={17} />
+                <div className="flex items-center gap-1">
+                  <span className="md:text-sm hidden md:flex">Cart</span>
                   {cartItemsCount > 0 && (
-                    <span className="absolute left-2 bottom-2 rounded-full bg-red-600 w-4 h-4 p-0 m-0 text-white text-xs leading-tight text-center">
-                      {cartItemsCount}
-                    </span>
+                    <div className="relative">
+                      <RiShoppingBag2Line size={16} />
+                      <span className="absolute left-2 bottom-2 rounded-full bg-red-600 w-4 h-4 p-0 m-0 text-white text-xs leading-tight text-center">
+                        {cartItemsCount}
+                      </span>
+                    </div>
                   )}
                 </div>
               </a>
             </Link>
           </li>
+          {/* Search */}
           <li>
-            <IoIosSearch size={20} />
-            <div>
-              <form className="flex relative items-center gap-1">
-                {/* <input
-                  type="text"
-                  placeholder="Search products"
-                  spellCheck="false"
-                  autoCorrect="false"
-                  autoComplete="off"
-                  aria-label="Search products"
-                  className="outline-none border-b-2 pl-6 text-black placeholder-black border-b-gray-700 w-44"
-                /> */}
-              </form>
+            <div
+              className="flex items-center gap-1 relative"
+              onClick={searchToggle}
+            >
+              <span className="text-sm hidden md:flex">Search</span>
+              <IoIosSearch size={18} />
             </div>
+            {isSearchOpen && <SearchBar clicked={searchToggle} />}
           </li>
         </ul>
       </div>
