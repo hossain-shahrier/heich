@@ -29,7 +29,7 @@ export default function Home({ products }) {
   return (
     <Layout title="Home page">
       <div className="my-4">
-        <Slider />
+        {/* <Slider /> */}
         <h1 className="text-xl font-serif mb-3">Latest Trends</h1>
         <div className="mx-auto grid grid-cols-2 gap-14 md:grid-cols-3 lg:grid-cols-5">
           {products

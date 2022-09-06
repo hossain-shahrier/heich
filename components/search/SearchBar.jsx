@@ -3,7 +3,7 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 export const SearchBar = ({ clicked }) => {
   return (
-    <div className="absolute right-0 overflow-x-auto top-20 w-screen h-56 menu bg-[#f3f5f7] text-[#495b6e]  shadow-[0_5px_100px_-40px_rgba(0,0,0,0.3)]">
+    <div className="absolute right-0 overflow-x-auto top-20 w-screen h-56 menu bg-[#f3f5f7] text-[#495b6e] shadow-[0_5px_100px_-40px_rgba(0,0,0,0.3)]">
       <div className="flex justify-evenly gap-28 items-center h-full">
         <div>
           <h1 className="uppercase mb-2">top search items</h1>

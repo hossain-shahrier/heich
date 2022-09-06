@@ -4,6 +4,7 @@ import { signOut, useSession } from 'next-auth/react';
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { IoIosSearch } from 'react-icons/io';
 import { RiShoppingBag2Line } from 'react-icons/ri';
+import { BsPerson } from 'react-icons/bs';
 // import { AiOutlineCustomerService } from 'react-icons/ai';
 import Cookies from 'js-cookie';
 import { Menu } from '@headlessui/react';
@@ -119,8 +120,9 @@ const Navbar = () => {
               </Menu>
             ) : (
               <Link href="/login">
-                <a className="flex items-center font-serif justify-center gap-2">
-                  <h3 className="text-sm md:text-xs">Login</h3>
+                <a className="flex items-center justify-center gap-1">
+                  <h3 className="text-sm">Login</h3>
+                  <BsPerson />
                 </a>
               </Link>
             )}
@@ -129,16 +131,16 @@ const Navbar = () => {
           <li>
             <Link href="/cart">
               <a>
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1 ">
                   <span className="md:text-sm hidden md:flex">Cart</span>
-                  {cartItemsCount > 0 && (
-                    <div className="relative">
-                      <RiShoppingBag2Line size={16} />
+                  <div className="relative">
+                    <RiShoppingBag2Line size={17} />
+                    {cartItemsCount > 0 && (
                       <span className="absolute left-2 bottom-2 rounded-full bg-red-600 w-4 h-4 p-0 m-0 text-white text-xs leading-tight text-center">
                         {cartItemsCount}
                       </span>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               </a>
             </Link>
