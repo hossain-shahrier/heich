@@ -122,7 +122,7 @@ const Navbar = () => {
               <Link href="/login">
                 <a className="flex items-center justify-center gap-1">
                   <h3 className="text-sm">Login</h3>
-                  <BsPerson />
+                  <BsPerson size={18}/>
                 </a>
               </Link>
             )}

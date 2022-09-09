@@ -1,0 +1,77 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures=["mongodb"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+type OrdersOrderItems {
+  id       String @map("_id") @db.ObjectId
+  image    String
+  name     String
+  price    Int
+  quantity Int
+}
+
+type OrdersShippingAddress {
+  address    String
+  city       String
+  country    String
+  fullName   String
+  postalCode String
+}
+
+model orders {
+  id              String                @id @default(auto()) @map("_id") @db.ObjectId
+  v               Int                   @map("__v")
+  createdAt       DateTime              @db.Date
+  isDelivered     Boolean
+  isPaid          Boolean
+  itemsPrice      Int
+  orderItems      OrdersOrderItems[]
+  paymentMethod   String
+  shippingAddress OrdersShippingAddress
+  shippingPrice   Int
+  /// Multiple data types found: Float: 86.7%, Int: 13.3% out of 15 sampled entries
+  taxPrice        Json
+  /// Multiple data types found: Float: 86.7%, Int: 13.3% out of 15 sampled entries
+  totalPrice      Json
+  updatedAt       DateTime              @db.Date
+  user            String                @db.ObjectId
+}
+
+model products {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  v            Int      @map("__v")
+  brand        String
+  category     String
+  countInStock Int
+  createdAt    DateTime @db.Date
+  description  String
+  image        String
+  name         String
+  numReviews   Int
+  price        String
+  rating       Float
+  slug         String   @unique(map: "slug_1")
+  type         String
+  updatedAt    DateTime @db.Date
+}
+
+model test {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+}
+
+model users {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  v         Int      @map("__v")
+  createdAt DateTime @db.Date
+  email     String   @unique(map: "email_1")
+  isAdmin   Boolean
+  name      String
+  password  String
+  updatedAt DateTime @db.Date
+}
